@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capture it!</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image_capture">
+        <div class="input_type">
+          <input
+            type="file"
+            name="image_upload"
+            id="file_upload"
+            accept="image/*"
+          />
+        </div>
+        <div class="button_group">
+          <button onclick="clearEverything()">clear</button>
+          <button>copy to clipboard</button>
+        </div>
+      </div>
+      <div id="image_preview" class="image_container">
+        <p class="paste_text" id="instruction_text">
+          <code>Ctrl +v</code> your picture
+        </p>
+        <img src="" alt="" srcset="" id="image_holder" />
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function clearEverything() {
+      const imageContainer = document.getElementById("image_preview");
+      const imgPreview = document.getElementById("image_holder");
+      const text = document.getElementById("instruction_text");
+      imageContainer.style.border = "dashed";
+      imgPreview.src = "";
+      // debugger;
+      text.style.display = "block";
+    }
+  </script>
+</html>
